@@ -1,5 +1,5 @@
-#include <iostream>
-#include <cstdlib>
+#include <stdio.h>
+#include <stdlib.h>
 #include <conio.h>
 #include <windows.h>
 
@@ -27,17 +27,17 @@ void dibujar() {
     for (int i = 0; i < ALTO; i++) {
         for (int j = 0; j < ANCHO; j++) {
             if (i == dinoY && j == dinoX)
-                std::cout << "R";
+                printf("R");
             else if (i == cactusY && j == cactusX)
-                std::cout << "+";
+                printf("+");
             else if (i == ALTO - 1)
-                std::cout << "_";
+                printf("_");
             else
-                std::cout << " ";
+                printf(" ");
         }
-        std::cout << std::endl;
+        printf("\n");
     }
-    std::cout << "Puntaje: " << puntaje << std::endl;
+    printf("Puntaje: %d\n", puntaje);
 }
 
 void saltar() {
@@ -73,6 +73,6 @@ int main() {
         actualizar();
         Sleep(VELOCIDAD_JUEGO); // Ajusta la velocidad del juego
     }
-    std::cout << std::endl << "¡Fin del Juego! Puntaje Final: " << puntaje << std::endl;
+    printf("\n¡Fin del Juego! Puntaje Final: %d\n", puntaje);
     return 0;
 }
